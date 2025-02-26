@@ -5,7 +5,7 @@ import joblib
 import os
 
 # ✅ Correct path to the model (since it's in the working directory)
-MODEL_PATH = "random_forest_model.pkl"
+MODEL_PATH = "/kaggle/working/random_forest_model.pkl"
 
 # ✅ Check if the model file exists before loading
 if not os.path.exists(MODEL_PATH):
