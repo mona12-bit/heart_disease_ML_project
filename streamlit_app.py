@@ -4,14 +4,13 @@ import pandas as pd
 import joblib
 import os
 
-# Load trained model safely
-MODEL_PATH = "random_forest_model.pkl"
+uploaded_file = st.file_uploader("Upload the trained model (random_forest_model.pkl)", type="pkl")
 
-if os.path.exists(MODEL_PATH):
-    model = joblib.load(MODEL_PATH)
+if uploaded_file is not None:
+    model = joblib.load(uploaded_file)
     st.success("Model loaded successfully!")
 else:
-    st.error("Model file not found. Please upload 'random_forest_model.pkl'.")
+    st.error("Please upload 'random_forest_model.pkl'.")
 
 # Title
 st.title("Heart Disease Prediction App")
