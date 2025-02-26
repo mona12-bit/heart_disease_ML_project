@@ -4,14 +4,14 @@ import pandas as pd
 import joblib
 import os
 
-# ✅ Correct path to the model (since it's in the working directory)
-MODEL_PATH = "/kaggle/working/random_forest_model.pkl"
+# Check if the model file exists
+model_path = "random_forest_model.pkl"  # Update if needed
 
-# ✅ Check if the model file exists before loading
-if not os.path.exists(MODEL_PATH):
-    st.error(f"Model file not found at '{MODEL_PATH}'. Please check the path and try again.")
+if not os.path.exists(model_path):
+    st.error(f"Model file not found at '{model_path}'. Please check the path and try again.")
 else:
-    model = joblib.load(MODEL_PATH)
+    # Load trained model
+    model = joblib.load(model_path)
 
     # Title
     st.title("Heart Disease Prediction")
