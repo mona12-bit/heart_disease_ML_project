@@ -4,7 +4,7 @@ import joblib
 import os
 
 # Define the correct path
-model_path = "random_forest_model.pkl"
+model_path = "heart-disease-ml-project (2).ipynb"
 
 # Check if model exists before loading
 if os.path.exists(model_path):
