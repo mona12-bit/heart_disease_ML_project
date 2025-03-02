@@ -4,7 +4,7 @@ import joblib
 import os
 
 # Correct model path
-model_path = "./random_forest_model.pkl"
+model = joblib.load("/kaggle/working/random_forest_model.pkl")
 
 # Load model if it exists
 if os.path.exists(model_path):
