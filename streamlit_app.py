@@ -1,22 +1,20 @@
 import streamlit as st
-import numpy as np
 import joblib
+import numpy as np
 import os
 
-# Define the correct path
-model_path = "random_forest_model.pkl"  # Ensure correct path
+# Correct model path
+model_path = "/kaggle/working/random_forest_model.pkl"
 
-# Check if model exists before loading
+# Load model only if it exists
 if os.path.exists(model_path):
-    st.write(f"✅ Model found at: {os.path.abspath(model_path)}")
     model = joblib.load(model_path)
     st.write("✅ Model loaded successfully!")
 else:
-    st.error(f"❌ Model file not found at {model_path}. Please upload it.")
+    st.error(f"❌ Model file not found at {model_path}. Please check the path.")
 
 # Streamlit UI
 st.title("Heart Disease Prediction")
-
 st.write("Enter the patient details below:")
 
 age = st.number_input("Age", min_value=20, max_value=100, value=50)
