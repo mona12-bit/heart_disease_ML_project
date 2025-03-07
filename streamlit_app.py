@@ -3,15 +3,14 @@ import numpy as np
 import joblib
 import os
 
-# Correct model path
-model = joblib.load("/kaggle/working/random_forest_model.pkl")
 
-# Load model if it exists
+model_path = "/kaggle/working/random_forest_model.pkl"
+
 if os.path.exists(model_path):
     model = joblib.load(model_path)
-    st.write("✅ Model loaded successfully!")
+    print("✅ Model loaded successfully!")
 else:
-    st.error(f"❌ Model file not found at {model_path}. Please upload it.")
+    raise FileNotFoundError(f"❌ Model file not found at {model_path}. Please check the path.")
 
 # Streamlit UI
 st.title("Heart Disease Prediction")
