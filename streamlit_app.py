@@ -3,14 +3,16 @@ import numpy as np
 import joblib
 import os
 
-model_path = "random_forest_model.pkl"
+# Define the correct path
+model_path = "random_forest_model.pkl"  # Ensure correct path
 
+# Check if model exists before loading
 if os.path.exists(model_path):
-    print(f"✅ Model found at: {os.path.abspath(model_path)}")  # Print full path
+    st.write(f"✅ Model found at: {os.path.abspath(model_path)}")
     model = joblib.load(model_path)
-    print("✅ Model loaded successfully!")
+    st.write("✅ Model loaded successfully!")
 else:
-    raise FileNotFoundError(f"❌ Model file not found at {model_path}. Please check the path.")
+    st.error(f"❌ Model file not found at {model_path}. Please upload it.")
 
 # Streamlit UI
 st.title("Heart Disease Prediction")
