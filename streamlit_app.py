@@ -3,10 +3,10 @@ import numpy as np
 import joblib
 import os
 
-
-model_path = "/kaggle/working/random_forest_model.pkl"
+model_path = "random_forest_model.pkl"
 
 if os.path.exists(model_path):
+    print(f"✅ Model found at: {os.path.abspath(model_path)}")  # Print full path
     model = joblib.load(model_path)
     print("✅ Model loaded successfully!")
 else:
